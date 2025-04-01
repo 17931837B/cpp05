@@ -32,6 +32,7 @@ class Bureaucrat
 		};
 };
 
-std::ostream	&operator<<(std::ostream &res, Fixed const &fixed);
+std::ostream &operator<<(std::ostream & os, Bureaucrat const &other);
+std::ostream	&operator<<(std::ostream &res, Bureaucrat const &fixed);
 
 #endif
