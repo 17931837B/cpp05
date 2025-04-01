@@ -1,6 +1,6 @@
 C++ = c++
 C++_FLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
-INFILES = 	main.cpp Bureaucrat.cpp
+INFILES = 	main.cpp Bureaucrat.cpp Form.cpp
 
 OBJFILES = $(INFILES:.cpp=.o)
 
