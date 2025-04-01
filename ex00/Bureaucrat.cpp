@@ -4,7 +4,7 @@ Bureaucrat::Bureaucrat(void) : name_("JohnDoe"), grade_(42)
 {
 }
 
-Bureaucrat::Bureaucrat(std::string name, int grade) :name_(name)
+Bureaucrat::Bureaucrat(const std::string name, int grade) :name_(name)
 {
 	if (grade < 1)
 		throw GradeTooHighException();
@@ -26,7 +26,7 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& src)
 {
 	if (this != &src)
 	{
-		this->name_ = src.name_;
+		// this->name_ = src.name_;
 		this->grade_ = src.grade_;
 	}
 	return (*this);
