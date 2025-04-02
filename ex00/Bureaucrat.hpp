@@ -14,8 +14,8 @@ class Bureaucrat
 		Bureaucrat();
 		Bureaucrat(const std::string name, int grade);
 		~Bureaucrat();
-		Bureaucrat(const Bureaucrat &other);
-		Bureaucrat	&operator=(const Bureaucrat &other);
+		Bureaucrat(const Bureaucrat &copy);
+		Bureaucrat	&operator=(const Bureaucrat &src);
 		std::string	getName() const;
 		int			getGrade() const;
 		void		incrementGrade();
