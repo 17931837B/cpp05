@@ -4,7 +4,7 @@ Form::Form(void) : name_("JohnDoe"), is_signed_(false), sign_grade_(150), execut
 {
 }
 
-Form::Form(std::string name, int sign_grade, int execute_grade) :name_(name), sign_grade_(sign_grade), execute_grade_(execute_grade)
+Form::Form(std::string name, int sign_grade, int execute_grade) :name_(name), is_signed_(false), sign_grade_(sign_grade), execute_grade_(execute_grade)
 {
 	if (sign_grade_ < 1 || execute_grade_ < 1)
 		throw GradeTooHighException();
@@ -67,6 +67,6 @@ const char* Form::GradeTooLowException::what() const throw()
 
 std::ostream	&operator<<(std::ostream &res, Form const &fixed)
 {
-		res << "Name: " << fixed.getName() << " isSigned: " << fixed.getIsSigned() << " SignGrade: " << fixed.getSignGrade() << " ExecuteGrade: " << fixed.getExecuteGrade() << std::endl;
+	res << "Name: " << fixed.getName() << " isSigned: " << fixed.getIsSigned() << " SignGrade: " << fixed.getSignGrade() << " ExecuteGrade: " << fixed.getExecuteGrade() << std::endl;
 	return (res);
 }
