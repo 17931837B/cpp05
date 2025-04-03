@@ -4,7 +4,7 @@ Bureaucrat::Bureaucrat(void) : name_("JohnDoe"), grade_(42)
 {
 }
 
-Bureaucrat::Bureaucrat(const std::string name, int grade) :name_(name)
+Bureaucrat::Bureaucrat(std::string name, int grade) :name_(name)
 {
 	if (grade < 1)
 		throw GradeTooHighException();
@@ -22,11 +22,11 @@ Bureaucrat::Bureaucrat(const Bureaucrat& copy) : name_(copy.name_), grade_(copy.
 {
 }
 
-Bureaucrat& Bureaucrat::operator=(const Bureaucrat& src) 
+Bureaucrat&	Bureaucrat::operator=(const Bureaucrat& src) 
 {
 	if (this != &src)
 	{
-		// this->name_ = src.name_;
+		this->name_ = src.name_;
 		this->grade_ = src.grade_;
 	}
 	return (*this);
@@ -58,12 +58,40 @@ void	Bureaucrat::decrementGrade()
 		grade_++;
 }
 
-const char*	Bureaucrat::GradeTooHighException::what() const throw()
+void	Bureaucrat::signForm(AForm &form)
+{
+	try
+	{
+		form.beSigned(*this);
+		std::cout << this->name_ << " signed " << form.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << this->name_ << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
+		return ;
+	}
+}
+
+void	Bureaucrat::executeForm(AForm const & form) const
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << this->name_ << " executed " << form.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << "[" << e.what() << "]" << std::endl;
+		return ;
+	}
+}
+
+const char* Bureaucrat::GradeTooHighException::what() const throw()
 {
 	return ("Grade too high");
 }
 
-const char*	Bureaucrat::GradeTooLowException::what() const throw()
+const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
 	return ("Grade too low");
 }

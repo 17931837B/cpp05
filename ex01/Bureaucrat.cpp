@@ -22,7 +22,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat& copy) : name_(copy.name_), grade_(copy.
 {
 }
 
-Bureaucrat& Bureaucrat::operator=(const Bureaucrat& src) 
+Bureaucrat&	Bureaucrat::operator=(const Bureaucrat& src) 
 {
 	if (this != &src)
 	{
@@ -32,17 +32,17 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& src)
 	return (*this);
 }
 
-std::string Bureaucrat::getName() const
+std::string	Bureaucrat::getName() const
 {
 	return (name_);
 }
 
-int Bureaucrat::getGrade() const
+int	Bureaucrat::getGrade() const
 {
 	return (grade_);
 }
 
-void Bureaucrat::incrementGrade()
+void	Bureaucrat::incrementGrade()
 {
 	if (grade_ == 1)
 		throw GradeTooHighException();
@@ -50,7 +50,7 @@ void Bureaucrat::incrementGrade()
 		grade_--;
 }
 
-void Bureaucrat::decrementGrade()
+void	Bureaucrat::decrementGrade()
 {
 	if (grade_ == 150)
 		throw GradeTooLowException();
@@ -58,7 +58,7 @@ void Bureaucrat::decrementGrade()
 		grade_++;
 }
 
-void Bureaucrat::signForm(Form &form)
+void	Bureaucrat::signForm(Form &form)
 {
 	try
 	{
@@ -72,12 +72,12 @@ void Bureaucrat::signForm(Form &form)
 	}
 }
 
-const char* Bureaucrat::GradeTooHighException::what() const throw()
+const char*	Bureaucrat::GradeTooHighException::what() const throw()
 {
 	return ("Grade too high");
 }
 
-const char* Bureaucrat::GradeTooLowException::what() const throw()
+const char*	Bureaucrat::GradeTooLowException::what() const throw()
 {
 	return ("Grade too low");
 }
