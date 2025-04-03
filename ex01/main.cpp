@@ -12,7 +12,7 @@ int main(void)
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << "Exception caught: " << e.what() << std::endl;
+		std::cerr << "[" << e.what() << "]" << std::endl;
 	}
 
 	std::cout << "--------------------------------------------------------\n";
@@ -25,7 +25,7 @@ int main(void)
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << "Exception caught: " << e.what() << std::endl;
+		std::cerr << "[" << e.what() << "]" << std::endl;
 	}
 
 	std::cout << "--------------------------------------------------------\n";
@@ -38,7 +38,7 @@ int main(void)
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << "Exception caught: " << e.what() << std::endl;
+		std::cerr << "[" << e.what() << "]" << std::endl;
 	}
 
 	std::cout << "--------------------------------------------------------\n";
@@ -51,7 +51,7 @@ int main(void)
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << "Exception caught: " << e.what() << std::endl;
+		std::cerr << "[" << e.what() << "]" << std::endl;
 	}
 
 	std::cout << "--------------------------------------------------------\n";
@@ -64,18 +64,7 @@ int main(void)
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << "Exception caught: " << e.what() << std::endl;
+		std::cerr << "[" << e.what() << "]" << std::endl;
 	}
-	// Form id_form("ID FORM", 100, 90);
-	// Bureaucrat mr_;
-	// Bureaucrat mr_id("MR_ID", 100);
-	// std::cout << id_form;
-	
-	// mr_slow.signForm(id_form);
-	// std::cout << id_form;
-
-	// mr_id.signForm(id_form);
-	// std::cout << id_form;
-	
 	return (0);
 }
