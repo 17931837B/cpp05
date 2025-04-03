@@ -32,7 +32,7 @@ void RobotomyRequestForm::Act() const
 
 	num = rand();
 	if (num % 2)
-		std::cout << getName() << " had a successful surgery.\n";
+		std::cout << getName() << " has been robotomized successfull.\n";
 	else
-		std::cout << getName() << " does not get up.\n";
+		std::cout << getName() << " failed.\n";
 }
