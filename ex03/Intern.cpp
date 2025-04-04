@@ -26,7 +26,7 @@ Intern &Intern::operator=(const Intern &src)
 
 AForm* Intern::makeForm(const std::string name, const std::string target)
 {
-	const int			num = 3;
+	const int	num = 3;
 	std::string	form_list[num];
 	form_list[0] = "ShrubberyCreationForm";
 	form_list[1] = "RobotomyRequestForm";
